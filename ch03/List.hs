@@ -17,3 +17,9 @@ toList Nil = []
 
 data Tree' a = Node' (Maybe a) (Maybe (Tree' a)) (Maybe (Tree' a))
     deriving (Show)
+
+
+nodesAreSame :: (Num a, Eq a1) => Tree a1 -> Tree a1 -> Maybe (a -> a)
+nodesAreSame (Node a _ _) (Node b _ _)
+    | a == b    = Just abs
+nodesAreSame _ _ = Nothing
