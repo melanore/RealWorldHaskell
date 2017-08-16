@@ -1,6 +1,3 @@
-
-
-
 add :: Num a => a -> a -> a
 add a b = a + b
 
@@ -33,3 +30,6 @@ type CustomerID = Int
 type ReviewBody = String
 data Review = Review CustomerID ReviewBody deriving (Show)
 
+sumList :: Num t => [t] -> t
+sumList (x:xs)  = x + sumList xs
+sumList []      = 0
