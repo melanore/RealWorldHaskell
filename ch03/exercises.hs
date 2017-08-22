@@ -46,3 +46,20 @@ f _ []     = []
 f _ [x]    = x
 f s (x:xs) = let f' x1 x2 = (x1 ++ [s] ++ x2) in f' x (f s xs)
 
+--9.
+data Tree a = Node a (Tree a) (Tree a)
+            | Empty
+    deriving (Show)
+
+height :: (Ord t, Num t) => Tree t1 -> t
+height Empty                    = 0
+height (Node _ Empty Empty)     = 1
+height (Node _ a b)   = 1 + max (height a) (height b)
+
+--10
+data Direction = Left
+               | Right
+               | Straight
+    deriving (Show)
+
+type Point = (Integer, Integer)
