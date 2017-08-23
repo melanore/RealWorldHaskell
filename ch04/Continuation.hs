@@ -17,5 +17,7 @@ bar = True `Pair` "bar"
 helloFsharp     = "Hello" |> (++) " F#"
 helloHaskell    =  (++) " Haskell" $ "Hello" 
 
-fsharpYoda list     = if list |> null |> not then head list else "Yoda people me call"
-haskellNormail list = if not $ null $ list then head list else "I'm normal"
+safeHead :: [a] -> Maybe a
+safeHead l 
+    | not $ null $ l   = Just $ head l
+    | otherwise        = Nothing
