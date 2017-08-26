@@ -14,10 +14,15 @@ bar = True `Pair` "bar"
 
 (|>) x f = f x
 
+(<->) f x y = f y x
+
 helloFsharp     = "Hello" |> (++) " F#"
 helloHaskell    =  (++) " Haskell" $ "Hello" 
 
 safeHead :: [a] -> Maybe a
 safeHead l 
     | not $ null $ l   = Just $ head l
-    | otherwise        = Nothing
+    | otherwise        = Nothing 
+
+
+fancyPlus l = zipWith (+) (filter even  l) (filter odd l) 
