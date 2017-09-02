@@ -38,5 +38,4 @@ fstWordOfEachLine :: String -> String
 fstWordOfEachLine = unlines . concat . map (take 1 . words) . lines
 
 --4.Write a program that transposes the text in a file. For instance, it should convert "hello\nworld\n" to "hw\neo\nlr\nll\nod\n"
-transposeFstWordEachLine :: String -> String
-transposeFstWordEachLine = unlines . concat .  map transpose . transpose . map words . lines
+f = unlines . concat .  map transpose . transpose . map words . lines
